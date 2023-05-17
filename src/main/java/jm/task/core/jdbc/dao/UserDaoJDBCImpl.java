@@ -27,18 +27,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void dropUsersTable() {
-//        try {
-//            DatabaseMetaData databaseMetaData = conn.getMetaData();
-//            ResultSet resultSet = databaseMetaData.getTables(null, null, null, new String[] {"users"});
-//
-//            while (resultSet.next()) {
-//                String name = resultSet.getString("users");
-//                String schema = resultSet.getString("main");
-//                System.out.println(name + " on schema " + schema);
-//            }
-//            } catch (SQLException ex) {
-//            throw new RuntimeException(ex);
-//        }
+
 
         try (Statement statement = conn.createStatement()){
             statement.executeUpdate("DROP TABLE users;");
